@@ -32,3 +32,8 @@ def test_token_is_rejected_after_logout(api):
     token = api.login_token()
     api.logout(token)
     assert api.profile(token).status_code == 401
+
+@pytest.mark.xfail(strict=True, reason="BUG-006: Authorization scheme is not checked")
+def test_profile_with_wrong_auth_scheme_returns_401(api):
+    token = api.login_token()                                         
+    assert api.profile(header=f"Basic {token}").status_code == 401 
