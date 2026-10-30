@@ -21,6 +21,9 @@ A small account service (register, login, profile, logout) with **seeded defects
 | BUG-005 | Malformed Authorization header causes a 500 error | Medium |
 | BUG-001 | Usernames differing only by case can both be registered | Medium |
 | BUG-002 | 8-character password rejected despite an 8-character minimum | Low |
+| BUG-007 | Non-string usernames (e.g. `null`) are accepted as text | Medium |
+| BUG-008 | Deeply nested JSON causes a 500 error | Medium |
+| BUG-006 | Authorization scheme is not checked | Low |
 
 ## Run it
 

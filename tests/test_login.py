@@ -46,3 +46,14 @@ def test_locked_account_rejects_correct_password(api):
     api.register()
     fail_login(api, 6)
     assert api.login().status_code == 423
+
+def test_unknown_username_never_triggers_lockout(api):
+    for _ in range(6):
+        assert api.login("nosuchuser", "WrongPass1").status_code == 401 
+
+def test_lockout_is_per_account(api):
+    api.register("player_a")
+    api.register("player_b")
+    fail_login(api, 6, "player_a")                        
+    assert api.login("player_a").status_code == 423       
+    assert api.login("player_b").status_code == 200 
