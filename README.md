@@ -1,6 +1,6 @@
 # Auth Service Test Lab
 
-![tests](https://github.com/YOUR-USERNAME/auth-service-test-lab/actions/workflows/tests.yml/badge.svg)
+![tests](https://github.com/Rew2Ren/auth-service-test-lab/actions/workflows/tests.yml/badge.svg)
 
 A small account service (register, login, profile, logout) with **seeded defects**, plus the tooling I built to find them: a requirements-based test suite, log analysis in SQL, and written bug reports judged from the player's perspective.
 
